@@ -26,3 +26,38 @@ CREATE TABLE Product(
     timeframe INTEGER not null,
 );
 
+CREATE SEQUENCE seq_userid 
+START WITH 1 
+INCREMENT BY 1;
+
+CREATE SEQUENCE seq_order_no 
+START WITH 1 
+INCREMENT BY 1;
+
+CREATE OR REPLACE TRIGGER user_id_nextval
+BEFORE INSERT ON User
+FOR EACH ROW 
+  WHEN (new.ID_no IS NULL) 
+BEGIN 
+  :new.ID_no := seq_userid.nextval; 
+END; 
+/
+
+CREATE OR REPLACE TRIGGER order_no_nextval
+BEFORE INSERT ON User
+FOR EACH ROW 
+  WHEN (new.order_no IS NULL) 
+BEGIN 
+  :new.order_no := seq_order_no.nextval; 
+END; 
+/
+
+
+INSERT INTO User VALUES
+    (NULL, 'Thornton', 'James', 'ec21910@qmul.ac.uk', NULL, 07735989926, False, 'Lol good one', CURRENT_TIMESTAMP, NULL);
+
+INSERT INTO Orders VALUES
+    (NULL, 1, CURRENT_TIMESTAMP, 2)
+
+INSERT INTO Orders VALUES
+    (NULL, 1, CURRENT_TIMESTAMP, 3)
