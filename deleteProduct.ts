@@ -13,17 +13,16 @@ interface Product {
 }
 
 async function deleteProduct(req: Request, res: Response) {
-    const product: Product[] = (await client.query(/*sql*/'DELETE FROM Products WHERE product_id = $1', [id], [req.body.product_id])).rows;
-    
-    const productFound = product[0];
+    console.log(req.body);
+    let id: string = req.params.id;
+    try {
+        const product: string = (await client.query(/*sql*/'DELETE FROM Products WHERE product_id = $1', [id]);
+        console.log(link)
+        res.status(200).json(link);
+    } catch (e) {
+        res.status(400).json({ message: 'Product does not exist' })
+    };
 
-    let returnMessage: Message = {
-        success: true,
-        message: "",
-        
-    if 
-}
-
-deleteProductRoute.post('/deleteProduct', async function (req, res) {
+deleteProductRoute.post('admin/<admin_id>/deleteProduct', async function (req, res) {
     await deleteNewProduct(req, res);
 })
