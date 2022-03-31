@@ -56,15 +56,12 @@ CREATE TABLE Orders(
 
 );
 
-
 INSERT INTO Product VALUES (1, "Bronze", 100, 10)
 INSERT INTO Product VALUES (2, "Silver", 200, 15)
 INSERT INTO Product VALUES (3, "Gold", 300, 20)
 INSERT INTO Product VALUES (4, "Platinum", 1000, 1)
 
 INSERT INTO User VALUES (1, "Amrita", "Jyoti", "AJ12024857@gmail.com", "PLACEHOLDER", "07283746573", FALSE, "391380")
-
-
 
 INSERT INTO Orders VALUES (1, 1, TIMESTAMP '2022-03-19 10:23:54+02', 4)
 INSERT INTO Orders VALUES (2, 1, TIMESTAMP '2022-03-20 07:54:42+02', 3)
@@ -94,7 +91,6 @@ BEGIN
   :new.order_no := seq_order_no.nextval; 
 END; 
 /
-
 
 INSERT INTO User VALUES
     (NULL, 'Thornton', 'James', 'ec21910@qmul.ac.uk', NULL, 07735989926, False, 'Lol good one', CURRENT_TIMESTAMP, NULL);
