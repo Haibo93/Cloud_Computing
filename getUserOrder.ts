@@ -14,6 +14,6 @@ getLinkRoutes.post('/getLink', async function (req:Request, res:Response) {
         console.log(link)
         res.status(200).json(link);
     } catch (e) {
-        console.log(e)
+        res.status(400).json({ message: 'Unable to find orders' })
     };
 })
