@@ -5,10 +5,10 @@
             "server": "localhost",
             "port": 5432,
             "driver": "PostgreSQL",
-            "name": "cc_coursework",
-            "database": "cc_coursework",
-            "username": "jmdwrntn",
-            "password": ""
+            "name": "cc_cloud",
+            "database": "cloud_computing",
+            "username": "haiboli",
+            "password": "Thurkka'sPussy"
         }
     ]
 }
