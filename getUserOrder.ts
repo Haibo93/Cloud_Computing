@@ -6,7 +6,7 @@ import dotenv from 'dotenv';
 
 export const getLinkRoutes = express.Router();
 
-getLinkRoutes.post('/getLink', async function (req:Request, res:Response) {
+async function getUserOrder(req: Request, res: Response) {
     console.log(req.body);
     let id: string = req.params.id;
     try {
@@ -14,6 +14,10 @@ getLinkRoutes.post('/getLink', async function (req:Request, res:Response) {
         console.log(link)
         res.status(200).json(link);
     } catch (e) {
-        res.status(400).json({ message: 'Unable to find orders' })
+        res.status(400).json({ message: 'Unable to find user order' })
     };
+})
+
+registerRoute.getUserOrder('/user/getUserOrder', async function (req, res) {
+    await getUserOrder(req, res);
 })
