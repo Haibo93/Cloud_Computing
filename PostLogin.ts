@@ -1,6 +1,6 @@
 import express from 'express';
 import { Request, Response } from 'express';
-import { checkPassword } from './hash';
+import { checkHash } from './hash';
 import { client, Message } from './main';
 
 export const logInRoutes = express.Router();
@@ -33,7 +33,7 @@ logInRoutes.post('/memberLogin', async function (req: Request, res: Response) {
     const users: User[] = (await client.query(/*sql*/"SELECT * FROM users where email = $1"
         , [req.body.email])).rows;
     const userFound = users[0];
-    if (userFound && await checkPassword(req.body.password, userFound.password)) {
+    if (userFound && await checkHash(req.body.password, userFound.password)) {
         req.session['user'] = userFound;
         if (userFound.is_active == true) {
             let returnMessage: LoginMessage;
@@ -56,7 +56,7 @@ logInRoutes.post('/adminLogin', async function (req: Request, res: Response) {
         , [req.body.email])).rows;
     const userFound = users[0];
 
-    if (userFound && await checkPassword(req.body.password, userFound.password)) {
+    if (userFound && await checkHash(req.body.password, userFound.password)) {
         req.session['user'] = userFound;
         if (userFound.is_active == true) {
             let returnMessage: LoginMessage;

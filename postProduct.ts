@@ -1,17 +1,16 @@
 
 import express from 'express';
 import { Request, Response } from 'express';
-import { hashing } from './hash';
-import { client, Message } from './main';
+import { client } from './main';
 
-export const newProduct = express.Router();
+export const newProductRoute = express.Router();
 
-interface Order {
-    id: number;
-    name: string;
-    cost: number;
-    timeframe: number;
-}
+// interface Order {
+//     id: number;
+//     name: string;
+//     cost: number;
+//     timeframe: number;
+// }
 
 async function addNewProduct(req: Request, res: Response) {
     await client.query(/*sql*/`INSERT INTO Products (id, name, cost, timeframe) VALUES 

@@ -1,10 +1,9 @@
 
 import express from 'express';
 import { Request, Response } from 'express';
-import { Client } from 'pg';
-import dotenv from 'dotenv';
+import {client} from './main';
 
-export const getLinkRoutes = express.Router();
+export const getUserOrderRoutes = express.Router();
 
 async function getUserOrder(req: Request, res: Response) {
     console.log(req.body);
@@ -16,8 +15,8 @@ async function getUserOrder(req: Request, res: Response) {
     } catch (e) {
         res.status(400).json({ message: 'Unable to find user order' })
     };
-})
+};
 
-registerRoute.getUserOrder('/user/getUserOrder', async function (req, res) {
+getUserOrderRoutes.get('/user/getUserOrder', async function (req, res) {
     await getUserOrder(req, res);
 })
