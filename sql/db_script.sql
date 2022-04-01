@@ -21,7 +21,7 @@ CREATE TABLE Order_(
     user_id INTEGER not null,
     product_id INTEGER not null,
     order_date timestamp with time zone not null,
-    FOREIGN KEY (user_id) REFERENCES Users(id),
+    FOREIGN KEY (user_id) REFERENCES User_(id),
     FOREIGN KEY (product_id) REFERENCES Product(id)
 );
 
