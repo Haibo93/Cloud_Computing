@@ -5,7 +5,7 @@ import { Message } from './interfaces';
 
 export const adminAddProductRoute = express.Router();
 
-async function addNewProduct(req: Request, res: Response) {
+async function adminAddProduct(req: Request, res: Response) {
 
     await client.query(/*sql*/`INSERT INTO Product (prod_name, prod_cost, prod_description) VALUES ($1, $2, $3))`, [req.body.prod_name, req.body.prod_cost, req.body.prod_description]);
     
@@ -22,6 +22,6 @@ async function addNewProduct(req: Request, res: Response) {
 
 adminAddProductRoute.post('admin/addProduct', async function (req, res) {
 
-    await addNewProduct(req, res);
+    await adminAddProduct(req, res);
     
 })

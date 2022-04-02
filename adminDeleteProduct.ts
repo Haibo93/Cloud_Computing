@@ -5,7 +5,7 @@ import { Message } from './interfaces';
 
 export const adminDeleteProductRoute = express.Router();
 
-async function deleteProduct(req: Request, res: Response) {
+async function adnubDeleteProduct(req: Request, res: Response) {
 
     let id: number = parseInt(req.params.id);
 
@@ -37,5 +37,5 @@ async function deleteProduct(req: Request, res: Response) {
 };
 
 adminDeleteProductRoute.delete('admin/deleteProduct/:id', async function (req, res) {
-    await deleteProduct(req, res);
+    await adnubDeleteProduct(req, res);
 });

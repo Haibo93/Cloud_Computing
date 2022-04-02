@@ -5,7 +5,7 @@ import { Product, Message } from './interfaces';
 
 export const adminUpdateProductRoute = express.Router();
 
-async function updateProduct(req: Request, res: Response) {
+async function adminUpdateProduct(req: Request, res: Response) {
 
     let id: number = parseInt(req.params.id);
 
@@ -44,5 +44,5 @@ async function updateProduct(req: Request, res: Response) {
 };
 
 adminUpdateProductRoute.put('admin/updateProduct/:id', async function (req, res) {
-    await updateProduct(req, res);
+    await adminUpdateProduct(req, res);
 });
