@@ -8,7 +8,7 @@ export const logInUserRoute = express.Router();
 
 async function loginUser(req: Request, res: Response) {
 
-    const users: User[] = (await client.query(/*sql*/"SELECT * FROM users where email = $1"
+    const users: User[] = (await client.query(/*sql*/`SELECT * FROM users where email = $1`
         , [req.body.email])).rows;
 
     const userFound = users[0];
@@ -41,7 +41,7 @@ async function loginUser(req: Request, res: Response) {
     };
 };
 
-logInUserRoute.post('/login', async function (req: Request, res: Response) {
+logInUserRoute.post('/logInUser', async function (req: Request, res: Response) {
 
     await loginUser(req, res);
     

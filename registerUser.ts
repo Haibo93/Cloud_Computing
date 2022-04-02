@@ -14,15 +14,21 @@ async function insertUser(req: Request, res: Response) {
     const userFound = users[0];
 
     let returnMessage: Message = {
+
         success: true,
+
         message: "",
+        
     };
 
     if (userFound === undefined) {
 
         let hashedPassword = await hashing(req.body.password);
 
-        await client.query(/*sql*/`INSERT INTO User_ (last_name, first_name, email, password_hash, phone_number, company_name, is_admin, created_at, updated_at) VALUES ($1,$2,$3,$4,$5,$6,$7,NOW(),NOW())`, [req.body.last_name, req.body.first_name, req.body.email, hashedPassword, req.body.phone_number, req.body.company_name, req.body.is_admin]);
+        await client.query(/*sql*/`INSERT INTO User_ 
+        (last_name, first_name, email, password_hash, phone_number, company_name, is_admin, created_at, updated_at) 
+        VALUES ($1,$2,$3,$4,$5,$6,$7,NOW(),NOW())`, 
+        [req.body.last_name, req.body.first_name, req.body.email, hashedPassword, req.body.phone_number, req.body.company_name, req.body.is_admin]);
 
         returnMessage.message = "Successfully Registered ";
         
@@ -41,6 +47,6 @@ async function insertUser(req: Request, res: Response) {
     };
 };
 
-registerUserRoute.post('/register', async function (req, res) {
+registerUserRoute.post('/registerUser', async function (req, res) {
     await insertUser(req, res);
 });

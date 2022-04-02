@@ -10,18 +10,24 @@ async function getProducts(req: Request, res: Response) {
     const products: Product[] = (await client.query(/*sql*/"SELECT * FROM Product")).rows;
 
     let returnMessage: Message = {
+
         success: true,
+
         message: "Product information",
+
     };
     
     res.status(200).json({
+
         result: products,
+
         message: returnMessage
+        
     });
 
 };
 
-getProductsRoute.post('/login', async function (req: Request, res: Response) {
+getProductsRoute.post('/getProducts', async function (req: Request, res: Response) {
 
     await getProducts(req, res);
     
