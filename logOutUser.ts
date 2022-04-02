@@ -3,7 +3,7 @@ import { Request, Response } from 'express';
 import { isLoggedIn } from './utils';
 import { Message } from './interfaces';
 
-export const logOutRoutes = express.Router();
+export const logOutUserRoute = express.Router();
 
 async function logOutUser(req: Request, res: Response) {
 
@@ -20,7 +20,7 @@ async function logOutUser(req: Request, res: Response) {
     res.json(returnMessage);
 };
 
-logOutRoutes.get('/logOutUser', isLoggedIn, async function (req: Request, res: Response) {
+logOutUserRoute.get('/logOutUser', isLoggedIn, async function (req: Request, res: Response) {
 
     await logOutUser(req, res);
     
