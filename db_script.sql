@@ -42,8 +42,7 @@ CREATE TABLE User(
 CREATE TABLE Product(
     id product_id primary key,
     name VARCHAR(255) not null,
-    cost INTEGER not null,
-    timeframe INTEGER not null,
+    cost INTEGER not null
 );
 
 CREATE TABLE Orders(
@@ -57,10 +56,10 @@ CREATE TABLE Orders(
 );
 
 
-INSERT INTO Product VALUES (1, "Bronze", 100, 10)
-INSERT INTO Product VALUES (2, "Silver", 200, 15)
-INSERT INTO Product VALUES (3, "Gold", 300, 20)
-INSERT INTO Product VALUES (4, "Platinum", 1000, 1)
+INSERT INTO Product VALUES (1, "Bronze", 100)
+INSERT INTO Product VALUES (2, "Silver", 200)
+INSERT INTO Product VALUES (3, "Gold", 300)
+INSERT INTO Product VALUES (4, "Platinum", 1000)
 
 INSERT INTO User VALUES (1, "Amrita", "Jyoti", "AJ12024857@gmail.com", "PLACEHOLDER", "07283746573", FALSE, "391380")
 
