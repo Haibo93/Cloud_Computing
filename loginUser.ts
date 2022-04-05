@@ -8,7 +8,7 @@ export const logInUserRoute = express.Router();
 
 async function loginUser(req: Request, res: Response) {
 
-    const users: User[] = (await client.query(/*sql*/`SELECT * FROM users where email = $1`
+    const users: User[] = (await client.query(/*sql*/`SELECT * FROM User_ where email = $1`
         , [req.body.email])).rows;
 
     const userFound = users[0];
@@ -18,7 +18,7 @@ async function loginUser(req: Request, res: Response) {
     if (userFound && await checkHash(req.body.password, userFound.password_hash!)) {
         // should not return the hash of user's password to the front end
         delete userFound.password_hash;
-
+        
         req.session['user'] = userFound;
 
         if (userFound.is_admin == true) {
