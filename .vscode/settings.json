@@ -1,14 +1,16 @@
 {
     "sqltools.connections": [
+        
         {
             "previewLimit": 50,
             "server": "localhost",
             "port": 5432,
+            "askForPassword": true,
             "driver": "PostgreSQL",
-            "name": "cc_coursework",
-            "database": "cc_coursework",
-            "username": "jmdwrntn",
-            "password": ""
+            "name": "cc_cloud",
+            "database": "cloud_computing",
+            "username": "haiboli",
+            "password": "1234"
         }
     ]
 }
