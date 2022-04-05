@@ -8,7 +8,7 @@ export const registerUserRoute = express.Router();
 
 async function insertUser(req: Request, res: Response) {
 
-    const users: User[] = (await client.query("SELECT * FROM users where email = $1"
+    const users: User[] = (await client.query("SELECT * FROM User_ where email = $1"
         , [req.body.email])).rows;
 
     const userFound = users[0];

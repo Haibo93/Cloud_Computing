@@ -7,10 +7,6 @@
             "port": 5432,
             "askForPassword": true,
             "driver": "PostgreSQL",
-            "name": "cc_cloud",
-            "database": "cloud_computing",
-            "username": "haiboli",
-            "password": "1234"
         }
     ]
 }
