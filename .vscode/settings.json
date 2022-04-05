@@ -4,11 +4,18 @@
             "previewLimit": 50,
             "server": "localhost",
             "port": 5432,
+            "askForPassword": true,
             "driver": "PostgreSQL",
+<<<<<<< HEAD
             "name": "cc_cloud",
             "database": "cloud_computing",
             "username": "haiboli",
             "password": "Thurkka'sPussy"
+=======
+            "name": "cloud_computing",
+            "database": "cloud_computing",
+            "username": "kent"
+>>>>>>> 805c5d4b44e448c3247c718dbab5ef75ab2216b5
         }
     ]
 }
