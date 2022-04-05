@@ -27,7 +27,7 @@ async function getProducts(req: Request, res: Response) {
 
 };
 
-getProductsRoute.post('/getProducts', async function (req: Request, res: Response) {
+getProductsRoute.get('/getProducts', async function (req: Request, res: Response) {
 
     await getProducts(req, res);
     

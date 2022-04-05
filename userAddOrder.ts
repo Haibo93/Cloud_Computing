@@ -9,13 +9,13 @@ async function userAddOrder(req: Request, res: Response) {
 
     let id: number = parseInt(req.params.id);
 
-    await client.query(/*sql*/`INSERT INTO Order_ (user_id, product_id, order_date) VALUES ($1, $2, NOW()))`, [id, req.body.product_id]);
+    await client.query(/*sql*/`INSERT INTO Order_ (user_id, product_id, order_date) VALUES ($1, $2, NOW())`, [id, req.body.product_id]);
 
     let returnMessage: Message = {
 
         success: true,
 
-        message: `New Product added to user ${id}",`
+        message: "Order added!"
 
     };
 

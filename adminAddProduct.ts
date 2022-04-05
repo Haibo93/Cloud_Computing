@@ -24,4 +24,4 @@ adminAddProductRoute.post('admin/addProduct', async function (req, res) {
 
     await adminAddProduct(req, res);
     
-})
+});
