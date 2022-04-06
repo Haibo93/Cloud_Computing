@@ -25,7 +25,7 @@ async function adminUpdateProduct(req: Request, res: Response) {
             prod_description: req.body.prod_description
         };
 
-        await client.query(/*sql*/`UPDATE Products SET prod_name = $1, prod_cost = $2, prod_description = $3 WHERE id = $4`, 
+        await client.query(/*sql*/`UPDATE Product SET prod_name = $1, prod_cost = $2, prod_description = $3 WHERE id = $4`, 
         [product.prod_name, product.prod_cost, product.prod_description, id]);
 
         returnMessage.message = `Production ${id} updated.`;
@@ -43,6 +43,6 @@ async function adminUpdateProduct(req: Request, res: Response) {
     };
 };
 
-adminUpdateProductRoute.put('admin/updateProduct/:id', async function (req, res) {
+adminUpdateProductRoute.put('/admin/updateProduct/:id', async function (req, res) {
     await adminUpdateProduct(req, res);
 });

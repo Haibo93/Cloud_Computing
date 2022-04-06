@@ -19,13 +19,12 @@ async function userUpdateProfile(req: Request, res: Response) {
     };
 
     try {
-
-        console.log(req.body, id);
-
-        await client.query(/*sql*/`UPDATE User_ SET last_name=$1,first_name=$2,email=$3,phone_number=$4,company_name=$5,updated_at=NOW() WHERE id = $6`,
+        console.log(req.body)
+        await client.query(/*sql*/`UPDATE User_ SET last_name=$1,first_name=$2,email=$3,phone_number=$4,company_name=$5 WHERE id = $6`,
             [req.body.last_name, req.body.first_name, req.body.email, req.body.phone_number, req.body.company_name, id]);
 
         returnMessage.message = "Profile updated."
+        res.status(200).json(returnMessage);
 
         res.status(201).json(returnMessage);
 
