@@ -19,7 +19,7 @@ async function getUserOrder(req: Request, res: Response) {
 
     try {
 
-        const userOrders: Order[] = (await client.query(/*sql*/`SELECT * FROM Order_ where user_id = $1`, [id])).rows[0];
+        const userOrders: Order[] = (await client.query(/*sql*/`SELECT * FROM Order_ where user_id = $1`, [id])).rows;
 
         returnMessage.message = "Orders retrieved successfully.";
 

@@ -24,7 +24,6 @@ async function userUpdateProfile(req: Request, res: Response) {
             [req.body.last_name, req.body.first_name, req.body.email, req.body.phone_number, req.body.company_name, id]);
 
         returnMessage.message = "Profile updated."
-        res.status(200).json(returnMessage);
 
         res.status(201).json(returnMessage);
 

@@ -44,5 +44,7 @@ async function adminUpdateProduct(req: Request, res: Response) {
 };
 
 adminUpdateProductRoute.put('/admin/updateProduct/:id', async function (req, res) {
+
     await adminUpdateProduct(req, res);
+    
 });
