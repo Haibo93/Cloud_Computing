@@ -8,7 +8,7 @@ export const registerUserRoute = express.Router();
 
 async function insertUser(req: Request, res: Response) {
 
-    const users: User[] = (await client.query("SELECT * FROM users where email = $1"
+    const users: User[] = (await client.query("SELECT * FROM User_ where email = $1"
         , [req.body.email])).rows;
 
     const userFound = users[0];
@@ -24,6 +24,8 @@ async function insertUser(req: Request, res: Response) {
     if (userFound === undefined) {
 
         let hashedPassword = await hashing(req.body.password);
+
+        console.log(req.body)
 
         await client.query(/*sql*/`INSERT INTO User_ 
         (last_name, first_name, email, password_hash, phone_number, company_name, is_admin, created_at, updated_at) 

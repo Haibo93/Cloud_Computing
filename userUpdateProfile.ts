@@ -20,12 +20,18 @@ async function userUpdateProfile(req: Request, res: Response) {
 
     try {
 
-        await client.query(/*sql*/`UPDATE Users SET last_name=$1,first_name=$2,email=$3,phone_number=$4,company_name=$5,updated_at=NOW() WHERE user_id = $6`,
+        console.log(req.body, id);
+
+        await client.query(/*sql*/`UPDATE User_ SET last_name=$1,first_name=$2,email=$3,phone_number=$4,company_name=$5,updated_at=NOW() WHERE id = $6`,
             [req.body.last_name, req.body.first_name, req.body.email, req.body.phone_number, req.body.company_name, id]);
 
         returnMessage.message = "Profile updated."
 
+        res.status(201).json(returnMessage);
+
     } catch (e) {
+
+        console.log(e);
 
         returnMessage.success = false;
 
@@ -36,7 +42,7 @@ async function userUpdateProfile(req: Request, res: Response) {
     };
 };
 
-userUpdateProfileRoute.put('user/:id/updateProfile', async function (req, res) {
+userUpdateProfileRoute.put('/user/:id/updateProfile', async function (req, res) {
 
     await userUpdateProfile(req, res);
 
