@@ -2,6 +2,7 @@ import express from 'express';
 import { Request, Response } from 'express';
 import { client } from './main';
 import { Message } from './interfaces';
+import { isAdminLoggedIn } from './utils';
 
 export const adminAddProductRoute = express.Router();
 
@@ -23,7 +24,7 @@ async function adminAddProduct(req: Request, res: Response) {
     res.status(200).json(returnMessage);
 };
 
-adminAddProductRoute.post('/admin/addProduct', async function (req: Request, res: Response) {
+adminAddProductRoute.post('/admin/addProduct', isAdminLoggedIn, async function (req: Request, res: Response) {
 
     await adminAddProduct(req, res);
 

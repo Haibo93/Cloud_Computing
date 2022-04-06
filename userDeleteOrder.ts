@@ -2,6 +2,7 @@ import express from 'express';
 import { Request, Response } from 'express';
 import { client } from './main';
 import { Message } from './interfaces';
+import { isUserLoggedIn } from './utils';
 
 export const userDeleteOrderRoute = express.Router();
 
@@ -36,7 +37,7 @@ async function userDeleteOrder(req: Request, res: Response) {
     };
 };
 
-userDeleteOrderRoute.delete('/user/:user_id/deleteOrder/:order_id', async function (req, res) {
+userDeleteOrderRoute.delete('/user/:user_id/deleteOrder/:order_id', isUserLoggedIn, async function (req, res) {
 
     await userDeleteOrder(req, res);
 

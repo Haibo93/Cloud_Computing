@@ -2,6 +2,7 @@ import express from 'express';
 import { Request, Response } from 'express';
 import { client } from './main';
 import { Message } from './interfaces';
+import { isUserLoggedIn } from './utils';
 // import { isLoggedIn } from './utils';
 
 export const userAddOrderRoute = express.Router();
@@ -24,7 +25,7 @@ async function userAddOrder(req: Request, res: Response) {
 
 };
 
-userAddOrderRoute.post('/user/:id/addOrder', async function (req, res) {
+userAddOrderRoute.post('/user/:id/addOrder', isUserLoggedIn, async function (req, res) {
 
     await userAddOrder(req, res);
 

@@ -2,6 +2,7 @@ import express from 'express';
 import { Request, Response } from 'express';
 import { client } from './main';
 import { Message } from './interfaces';
+import { isUserLoggedIn } from './utils';
 
 
 export const userUpdateProfileRoute = express.Router();
@@ -40,7 +41,7 @@ async function userUpdateProfile(req: Request, res: Response) {
     };
 };
 
-userUpdateProfileRoute.put('/user/:id/updateProfile', async function (req, res) {
+userUpdateProfileRoute.put('/user/:id/updateProfile', isUserLoggedIn, async function (req, res) {
 
     await userUpdateProfile(req, res);
 

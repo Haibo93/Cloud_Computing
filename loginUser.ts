@@ -21,6 +21,8 @@ async function loginUser(req: Request, res: Response) {
         
         req.session['user'] = userFound;
 
+        console.log(req.session);
+
         if (userFound.is_admin == true) {
 
             returnMessage = new LoginMessage(true, "Welcome Admin!", true);

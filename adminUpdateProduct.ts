@@ -2,6 +2,7 @@ import express from 'express';
 import { Request, Response } from 'express';
 import { client } from './main';
 import { Product, Message } from './interfaces';
+import { isAdminLoggedIn } from './utils';
 
 export const adminUpdateProductRoute = express.Router();
 
@@ -43,7 +44,7 @@ async function adminUpdateProduct(req: Request, res: Response) {
     };
 };
 
-adminUpdateProductRoute.put('/admin/updateProduct/:id', async function (req, res) {
+adminUpdateProductRoute.put('/admin/updateProduct/:id', isAdminLoggedIn, async function (req, res) {
 
     await adminUpdateProduct(req, res);
     
