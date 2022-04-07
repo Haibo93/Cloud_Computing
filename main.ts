@@ -27,7 +27,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 app.get('/', function (req: Request, res: Response) {
-    res.sendFile(path.resolve('./public/index.html'))
+    res.sendFile(path.resolve('./public/landing.html'))
 });
 
 import { registerUserRoute } from './registerUser';
