@@ -18,7 +18,7 @@ async function loginUser(req: Request, res: Response) {
     if (userFound && await checkHash(req.body.password, userFound.password_hash!)) {
         // should not return the hash of user's password to the front end
         delete userFound.password_hash;
-
+        
         req.session['user'] = userFound;
 
         if (userFound.is_admin == true) {

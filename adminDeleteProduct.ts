@@ -19,7 +19,7 @@ async function adnubDeleteProduct(req: Request, res: Response) {
 
     try {
 
-        await client.query(/*sql*/`DELETE FROM Products WHERE product_id = $1`, [id]);
+        await client.query(/*sql*/`DELETE FROM Product WHERE id = $1;`, [id]);
 
         returnMessage.message = `Production ${id} deleted.`;
 
@@ -36,6 +36,6 @@ async function adnubDeleteProduct(req: Request, res: Response) {
     };
 };
 
-adminDeleteProductRoute.delete('admin/deleteProduct/:id', async function (req, res) {
+adminDeleteProductRoute.delete('/admin/deleteProduct/:id', async function (req, res) {
     await adnubDeleteProduct(req, res);
 });

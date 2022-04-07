@@ -1,3 +1,7 @@
+DROP TABLE Order_;
+DROP TABLE User_;
+DROP TABLE Product;
+
 CREATE TABLE User_(
   id SERIAL primary key,
   last_name VARCHAR(255) not null,
