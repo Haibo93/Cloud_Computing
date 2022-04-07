@@ -1,5 +1,11 @@
+import dotenv from 'dotenv';
+
+dotenv.config();
+
+export const api_key = process.env.API_KEY;
+
 function weatherBalloon() {
-    fetch('https://api.openweathermap.org/data/2.5/weather?lat=51.5072&lon=0.1276&appid=c0caf55ac81d56aa0ed5275c2988f7f3&units=metric')
+    fetch('https://api.openweathermap.org/data/2.5/weather?lat=51.5072&lon=0.1276&appid=' + api_key + '&units=metric')
     .then(function(resp) {return resp.json() })
     .then(function(data) {
         drawWeather(data);
