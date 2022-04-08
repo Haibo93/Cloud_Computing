@@ -41,6 +41,7 @@ import { userAddOrderRoute } from './userAddOrder';
 import { userDeleteOrderRoute } from './userDeleteOrder';
 import { userGetOrdersRoute } from './userGetOrders';
 import { userUpdateProfileRoute } from './userUpdateProfile';
+import { getUserDetailsRoute } from './getUserDetails';
 
 app.use(registerUserRoute);
 app.use(logInUserRoute);
@@ -53,6 +54,7 @@ app.use(userAddOrderRoute);
 app.use(userDeleteOrderRoute);
 app.use(userGetOrdersRoute);
 app.use(userUpdateProfileRoute);
+app.use(getUserDetailsRoute)
 
 app.use(express.static('public'));
 
