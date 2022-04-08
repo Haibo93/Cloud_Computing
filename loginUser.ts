@@ -2,7 +2,8 @@ import express from 'express';
 import { Request, Response } from 'express';
 import { checkHash } from './hash';
 import { client } from './main';
-import { User, LoginMessage } from './interfaces'
+import path from 'path';
+import { User } from './interfaces'
 
 export const logInUserRoute = express.Router();
 
@@ -13,7 +14,7 @@ async function loginUser(req: Request, res: Response) {
 
     const userFound = users[0];
 
-    let returnMessage: LoginMessage;
+    // let returnMessage: LoginMessage;
 
     if (userFound && await checkHash(req.body.password, userFound.password_hash!)) {
         // should not return the hash of user's password to the front end
@@ -23,29 +24,32 @@ async function loginUser(req: Request, res: Response) {
 
         console.log(req.session);
 
-        if (userFound.is_admin == true) {
+        // if (userFound.is_admin == true) {
 
-            returnMessage = new LoginMessage(true, "Welcome Admin!", true);
+        //     returnMessage = new LoginMessage(true, "Welcome Admin!", true)
 
-        } else {
+        // } else {
 
-            returnMessage = new LoginMessage(true, "Welcome Member", false);
+        //     returnMessage = new LoginMessage(true, "Welcome Member", false);
 
-        };
+        // };
 
-        res.status(200).json(returnMessage);
+        // Redirect
+        // res.status(200).json(returnMessage);
+        res.sendFile(path.resolve('./public/userpage.html'));
 
     } else {
 
-        returnMessage = new LoginMessage(false, "Incorrect email or password", false);
+        // returnMessage = new LoginMessage(false, "Incorrect email or password", false);
 
-        res.status(401).json(returnMessage);
+        res.sendFile(path.resolve('./public/landing.html'));
+        
     };
 };
 
 logInUserRoute.post('/logInUser', async function (req: Request, res: Response) {
 
     await loginUser(req, res);
-    
+
 });
 

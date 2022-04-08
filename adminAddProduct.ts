@@ -28,4 +28,4 @@ adminAddProductRoute.post('/admin/addProduct', isAdminLoggedIn, async function (
 
     await adminAddProduct(req, res);
     
-});
+})
