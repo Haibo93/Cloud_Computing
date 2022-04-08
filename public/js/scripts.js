@@ -54,5 +54,8 @@ document.getElementById('login-user').addEventListener('submit', async function(
     });
     const result = await res.json();
     console.log(result);
-    window.location = 'userpage.html';
+    window.location = '/userpage.html'
 });
+var redirect = function(){
+    document.location.href="/userpage.html"
+ }

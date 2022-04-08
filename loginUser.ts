@@ -46,6 +46,6 @@ async function loginUser(req: Request, res: Response) {
 logInUserRoute.post('/logInUser', async function (req: Request, res: Response) {
 
     await loginUser(req, res);
-    
+
 });
 
