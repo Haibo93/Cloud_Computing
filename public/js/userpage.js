@@ -1,12 +1,16 @@
 
 const userDetail = document.getElementById('userDetails');
 const userOrder = document.getElementById('userOrder');
+const logOutBtn = document.getElementById('logOutBtn');
+
+logOutBtn.addEventListener('click', logOut);
 
 async function getLogInStatus() {
     const res = await fetch('/getLogInStatus');
     const result = await res.json();
     return result.result;
-;}
+    ;
+};
 
 async function getUserDetail(userId) {
     const res = await fetch(`/user/${userId}/`)
@@ -31,15 +35,15 @@ async function getUserOrder(userId) {
     const userOrder2 = userOrder.result
     const orderTable = document.querySelector('#userOrder')
     orderTable.innerHTML = ''
-    for (let order of userOrder2){
+    for (let order of userOrder2) {
         let productname = ""
-        if (order.product_id == "1"){
+        if (order.product_id == "1") {
             productname = "Bronze"
-        } else if (order.product_id == "2"){
+        } else if (order.product_id == "2") {
             productname = "Silver"
-        } else if (order.product_id == "3"){
+        } else if (order.product_id == "3") {
             productname = "Gold"
-        } else if (order.product_id == "4"){
+        } else if (order.product_id == "4") {
             productname = "Platinum"
         }
         orderTable.innerHTML += `
@@ -49,11 +53,17 @@ async function getUserOrder(userId) {
         <td>${order.order_date}</td>
         </tr>
         `
-       }
+    }
 };
 
+async function logOut() {
+    const res = await fetch('/logOutUser');
+    const result = await res.json();
+    console.log(result);
+    window.location = '/landing.html';
+};
 
-window.onload = async function() {
+window.onload = async function () {
     const userId = await getLogInStatus();
     getUserDetail(userId);
     getUserOrder(userId);
