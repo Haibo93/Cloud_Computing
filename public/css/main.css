@@ -12,16 +12,24 @@ body {
 .landing-name {
      text-align: center;
      color: azure;
+     text-shadow: 2px 2px #908a8a;
+     text-decoration: underline;
  }
 
  .landing-description {
     text-align: center;
-    color: rgb(208, 105, 97);
+    color: rgb(53, 114, 60);
     font-family: "Lucida Console", "Courier New", monospace;
+    font-size: larger;
 }
 
 .weather {
     text-align: center;
-    color: blueviolet;
-    margin-top: 10px;
+    color: #000000;
+    margin-top: 15px;
+}
+
+.middle-column {
+    margin-left: -20px;
+    margin-right: -20px;
 }

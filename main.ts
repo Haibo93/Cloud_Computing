@@ -9,6 +9,7 @@ const app = express();
 
 // connecting the database to the server
 dotenv.config();
+
 export const client = new Client({
     database: process.env.DB_NAME,
     user: process.env.DB_USERNAME,
