@@ -34,3 +34,18 @@ export const isAdminLoggedIn = function (req: Request, res: Response, next: expr
 
     };
 };
+
+export const loggedInUserDetails = function (req: Request, res: Response) {
+
+    if (req.session['user']) {
+        const userDetailThings = req.session['user']
+        res.status(200).json({
+            result: userDetailThings
+        })
+
+    } else {
+
+        res.status(401).json("Unauthorized!");
+
+    };
+};
