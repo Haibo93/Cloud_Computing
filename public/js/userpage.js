@@ -48,7 +48,7 @@ async function userOrderfunction() {
 
 
 window.onload = function() {
-    console.log("onloaded fuck you!")
+    console.log("onloaded works")
     userDetailfunction()
     userOrderfunction()
 }

@@ -25,7 +25,7 @@ async function loginUser(req: Request, res: Response) {
 
         if (userFound.is_admin == true) {
 
-            returnMessage = new LoginMessage(true, "Welcome Admin!", true);
+            returnMessage = new LoginMessage(true, "Welcome Admin!", true)
 
         } else {
 
