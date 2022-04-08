@@ -2,7 +2,7 @@ import express from 'express';
 import { Request, Response } from 'express';
 import { client } from './main';
 import { User, Message } from './interfaces';
-import { isLoggedIn } from './utils';
+import { isUserLoggedIn } from './utils';
 
 export const getUserDetailsRoute = express.Router();
 
@@ -28,6 +28,6 @@ async function getUserDetails(req: Request, res: Response) {
     };
 };
 
-getUserDetailsRoute.get('/user/:id/', isLoggedIn, async function (req, res) {
+getUserDetailsRoute.get('/user/:id/', isUserLoggedIn, async function (req, res) {
     await getUserDetails(req, res);
 });
