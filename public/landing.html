@@ -11,7 +11,6 @@
         crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="css/main.css">
     <title>FPF Solutions</title>
-    <script src="js/weather.js"></script>
 </head>
 <body">
     <!-- Div to center title, slogan, buttons and weather API within the page -->
@@ -67,7 +66,7 @@
                 <!-- Modal body -->
                 <div class="modal-body">
                     <!-- Wrap modal input fields in form tag to extract values entered into the form -->
-                    <form action="/loginUser" method="post" id="login-user">
+                    <form action="/logInUser" method="post" id="login-user">
                         <div class="form-floating mb-3">
                             <i class="fas fa-envelope prefix grey-text"></i>
                             <input type="email" name="email" id="login-email" class="form-control validate">
@@ -81,9 +80,9 @@
                             <label data-error="wrong" data-success="right">Password</label>
                         </div>
 
-                    <!-- Modal footer -->
+                        <!-- Modal footer -->
                         <div class="modal-footer d-flex justify-content-center">
-                            <input class="btn btn-success" type="submit" id="login-button-modal"></input>
+                            <input class="btn btn-success" type="submit" id="login-button-modal"/>
                         </div>
                     </form>
                 </div>
@@ -140,7 +139,7 @@
                             <input type="text" name="company_name" id="register-company" class="form-control validate">
                             <label data-error="wrong" data-success="right">Company name</label>
                         </div>
-                         <!-- Modal footer -->
+                        <!-- Modal footer -->
                         <div class="modal-footer d-flex justify-content-center">
                             <input class="btn btn-success" type="submit" id="register-button-modal"></input>
                         </div>
@@ -151,5 +150,7 @@
         </div>
     </div>
     <!-- Register modal-->
+    <script src="js/scripts.js"></script>
+    <script src="js/weather.js"></script>
     </body>
 </html>

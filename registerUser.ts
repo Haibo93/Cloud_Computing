@@ -2,7 +2,6 @@ import express from 'express';
 import { Request, Response } from 'express';
 import { hashing } from './hash';
 import { client } from './main';
-import path from 'path';
 import { User, Message } from './interfaces'
 
 export const registerUserRoute = express.Router();
@@ -41,11 +40,15 @@ async function insertUser(req: Request, res: Response) {
 
         req.session['user'] = newUser;
 
-        res.sendFile(path.resolve('./public/userpage.html'));
+        res.status(200).json(returnMessage);
 
     } else {
 
-        res.sendFile(path.resolve('./public/landing.html'));
+        returnMessage.success = false;
+
+        returnMessage.message = "Already existed!";
+
+        res.status(400).json(returnMessage);
 
     };
 };
