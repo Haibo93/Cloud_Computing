@@ -36,22 +36,23 @@ async function userOrderfunction() {
     orderTable.innerHTML = ''
     for (let order of userOrder2){
         console.log(order)
+        let productname = ""
+        if (order.product_id == "1"){
+            productname = "Bronze"
+        } else if (order.product_id == "2"){
+            productname = "Silver"
+        } else if (order.product_id == "3"){
+            productname = "Gold"
+        } else if (order.product_id == "4"){
+            productname = "Platinum"
+        }
         orderTable.innerHTML += `
         <tr>
-        <td>${order.id}</td>`
-        if (order.product_id == "1"){
-            orderTable.innerHTML +=  '<td>Bronze</td>'
-        } else if (order.product_id == "2"){
-            orderTable.innerHTML +=  '<td>Silver</td>'
-        } else if (order.product_id == "3"){
-            orderTable.innerHTML +=  '<td>Gold</td>'
-        } else if (order.product_id == "4"){
-            orderTable.innerHTML +=  '<td>Platinum</td>'
-        }
-        orderTable.innerHTML +=
-        `
+        <td>${order.id}</td>
+        <td>${productname}</td>
         <td>${order.order_date}</td>
-        </tr>`
+        </tr>
+        `
        }
 };
 
@@ -59,4 +60,5 @@ async function userOrderfunction() {
 window.onload = function() {
     userDetailfunction()
     userOrderfunction()
+    loggedInUserDetails()
 }
