@@ -2,6 +2,7 @@ import express from 'express';
 import { Request, Response } from 'express';
 import { client } from './main';
 import { Order, Message } from './interfaces';
+import { isUserLoggedIn } from './utils';
 
 export const userGetOrdersRoute = express.Router();
 
@@ -19,7 +20,7 @@ async function getUserOrder(req: Request, res: Response) {
 
     try {
 
-        const userOrders: Order[] = (await client.query(/*sql*/`SELECT * FROM Order_ where user_id = $1`, [id])).rows[0];
+        const userOrders: Order[] = (await client.query(/*sql*/`SELECT * FROM Order_ where user_id = $1`, [id])).rows;
 
         returnMessage.message = "Orders retrieved successfully.";
 
@@ -42,7 +43,7 @@ async function getUserOrder(req: Request, res: Response) {
     };
 };
 
-userGetOrdersRoute.get('/user/:id/getUserOrder', async function (req, res) {
+userGetOrdersRoute.get('/user/:id/getUserOrder', isUserLoggedIn, async function (req, res) {
 
     await getUserOrder(req, res);
 

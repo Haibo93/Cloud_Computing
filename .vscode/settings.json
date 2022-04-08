@@ -6,9 +6,9 @@
             "port": 5432,
             "askForPassword": true,
             "driver": "PostgreSQL",
-            "name": "cc_coursework",
-            "database": "cc_coursework",
-            "username": "jmdwrntn"
+            "name": "cloud_computing",
+            "database": "cloud_computing",
+            "username": "kent"
         }
     ]
 }

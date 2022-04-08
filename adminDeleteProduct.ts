@@ -2,10 +2,11 @@ import express from 'express';
 import { Request, Response } from 'express';
 import { client } from './main';
 import { Message } from './interfaces';
+import { isAdminLoggedIn } from './utils';
 
 export const adminDeleteProductRoute = express.Router();
 
-async function adnubDeleteProduct(req: Request, res: Response) {
+async function adminDeleteProduct(req: Request, res: Response) {
 
     let id: number = parseInt(req.params.id);
 
@@ -36,6 +37,8 @@ async function adnubDeleteProduct(req: Request, res: Response) {
     };
 };
 
-adminDeleteProductRoute.delete('/admin/deleteProduct/:id', async function (req, res) {
-    await adnubDeleteProduct(req, res);
+adminDeleteProductRoute.delete('/admin/deleteProduct/:id', isAdminLoggedIn, async function (req, res) {
+    
+    await adminDeleteProduct(req, res);
+
 });

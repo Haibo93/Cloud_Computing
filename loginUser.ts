@@ -21,9 +21,11 @@ async function loginUser(req: Request, res: Response) {
         
         req.session['user'] = userFound;
 
+        console.log(req.session);
+
         if (userFound.is_admin == true) {
 
-            returnMessage = new LoginMessage(true, "Welcome Admin!", true);
+            returnMessage = new LoginMessage(true, "Welcome Admin!", true)
 
         } else {
 
@@ -46,6 +48,6 @@ async function loginUser(req: Request, res: Response) {
 logInUserRoute.post('/logInUser', async function (req: Request, res: Response) {
 
     await loginUser(req, res);
-    
+
 });
 

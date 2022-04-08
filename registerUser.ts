@@ -25,6 +25,8 @@ async function insertUser(req: Request, res: Response) {
 
         let hashedPassword = await hashing(req.body.password);
 
+        console.log(req.body)
+
         await client.query(/*sql*/`INSERT INTO User_ 
         (last_name, first_name, email, password_hash, phone_number, company_name, is_admin, created_at, updated_at) 
         VALUES ($1,$2,$3,$4,$5,$6,$7,NOW(),NOW())`, 
