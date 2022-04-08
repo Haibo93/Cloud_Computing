@@ -2,13 +2,14 @@
 const userDetail = document.getElementById('userDetails');
 const userOrder = document.getElementById('userOrder');
 
-async function userDetailfunction() {
-    // let x = document.cookie
-    // console.log(x)
-    // const idfinder = x['user'];
-    // const id = idfinder.id
-    // const res = await fetch(`/user/${id}/`)
-    const res = await fetch(`/user/1/`)
+async function getLogInStatus() {
+    const res = await fetch('/getLogInStatus');
+    const result = await res.json();
+    return result.result;
+;}
+
+async function getUserDetail(userId) {
+    const res = await fetch(`/user/${userId}/`)
     const userDetail = await res.json();
     const userDetail2 = userDetail.result
     const tableDisplay = document.querySelector('#userDetails')
@@ -24,18 +25,13 @@ async function userDetailfunction() {
     `
 }
 
-async function userOrderfunction() {
-    // const idfinder = req.session['user'];
-    // const id = idfinder.id
-    // const res = await fetch(`/user/${id}/getUserOrder`)
-    const res = await fetch(`/user/1/getUserOrder`)
+async function getUserOrder(userId) {
+    const res = await fetch(`/user/${userId}/getUserOrder`)
     const userOrder = await res.json();
     const userOrder2 = userOrder.result
-    console.log(userOrder2)
     const orderTable = document.querySelector('#userOrder')
     orderTable.innerHTML = ''
     for (let order of userOrder2){
-        console.log(order)
         let productname = ""
         if (order.product_id == "1"){
             productname = "Bronze"
@@ -57,8 +53,8 @@ async function userOrderfunction() {
 };
 
 
-window.onload = function() {
-    userDetailfunction()
-    userOrderfunction()
-    loggedInUserDetails()
-}
+window.onload = async function() {
+    const userId = await getLogInStatus();
+    getUserDetail(userId);
+    getUserOrder(userId);
+};

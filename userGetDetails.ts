@@ -4,9 +4,9 @@ import { client } from './main';
 import { User, Message } from './interfaces';
 import { isUserLoggedIn } from './utils';
 
-export const getUserDetailsRoute = express.Router();
+export const userGetDetailsRoute = express.Router();
 
-async function getUserDetails(req: Request, res: Response) {
+async function userGetDetails(req: Request, res: Response) {
     let id: number = parseInt(req.params.id);
     let returnMessage: Message = {
         success: true,
@@ -28,6 +28,6 @@ async function getUserDetails(req: Request, res: Response) {
     };
 };
 
-getUserDetailsRoute.get('/user/:id/', isUserLoggedIn, async function (req, res) {
-    await getUserDetails(req, res);
+userGetDetailsRoute.get('/user/:id/', isUserLoggedIn, async function (req, res) {
+    await userGetDetails(req, res);
 });
