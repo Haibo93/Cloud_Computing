@@ -9,6 +9,7 @@ const app = express();
 
 // connecting the database to the server
 dotenv.config();
+
 export const client = new Client({
     database: process.env.DB_NAME,
     user: process.env.DB_USERNAME,
@@ -27,7 +28,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 app.get('/', function (req: Request, res: Response) {
-    res.sendFile(path.resolve('./public/index.html'))
+    res.sendFile(path.resolve('./public/landing.html'))
 });
 
 import { registerUserRoute } from './registerUser';

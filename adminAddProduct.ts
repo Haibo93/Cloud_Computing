@@ -27,6 +27,4 @@ async function adminAddProduct(req: Request, res: Response) {
 adminAddProductRoute.post('/admin/addProduct', isAdminLoggedIn, async function (req: Request, res: Response) {
 
     await adminAddProduct(req, res);
-
-})
-
+});

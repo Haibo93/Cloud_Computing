@@ -34,7 +34,7 @@ async function userUpdateProfile(req: Request, res: Response) {
 
         returnMessage.success = false;
 
-        returnMessage.message = `Profile ${id} failed to update.`
+        returnMessage.message = 'Profile failed to update.'
 
         res.status(400).json({ message: 'Update failed' });
 

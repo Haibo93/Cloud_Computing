@@ -1,0 +1,35 @@
+body {
+    background-image: url("../assets/landing_bg.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+.parent {
+    min-height: 100vh;
+ }
+
+.landing-name {
+     text-align: center;
+     color: azure;
+     text-shadow: 2px 2px #908a8a;
+     text-decoration: underline;
+ }
+
+ .landing-description {
+    text-align: center;
+    color: rgb(53, 114, 60);
+    font-family: "Lucida Console", "Courier New", monospace;
+    font-size: larger;
+}
+
+.weather {
+    text-align: center;
+    color: #000000;
+    margin-top: 15px;
+}
+
+.middle-column {
+    margin-left: -20px;
+    margin-right: -20px;
+}
