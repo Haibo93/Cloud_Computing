@@ -17,7 +17,7 @@ async function userAddOrder(req: Request, res: Response) {
 
         success: true,
 
-        message: `New Product added to user ${id}`
+        message: "Order added!"
 
     };
 

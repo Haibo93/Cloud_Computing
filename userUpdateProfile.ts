@@ -20,8 +20,8 @@ async function userUpdateProfile(req: Request, res: Response) {
     };
 
     try {
-        console.log(req.body)
-        await client.query(/*sql*/`UPDATE User_ SET last_name=$1,first_name=$2,email=$3,phone_number=$4,company_name=$5 WHERE id = $6`,
+
+        await client.query(/*sql*/`UPDATE User_ SET last_name=$1,first_name=$2,email=$3,phone_number=$4,company_name=$5 WHERE id = $6;`,
             [req.body.last_name, req.body.first_name, req.body.email, req.body.phone_number, req.body.company_name, id]);
 
         returnMessage.message = "Profile updated."
@@ -34,7 +34,7 @@ async function userUpdateProfile(req: Request, res: Response) {
 
         returnMessage.success = false;
 
-        returnMessage.message = `Profile ${id} failed to update.`
+        returnMessage.message = 'Profile failed to update.'
 
         res.status(400).json({ message: 'Update failed' });
 
