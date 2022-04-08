@@ -56,3 +56,7 @@
 document.getElementById('login-user').addEventListener("submit", function(event) {
     event.preventDefault();
   }, true);
+
+  document.getElementById('register-user').addEventListener("submit", function(event) {
+    event.preventDefault();
+  }, true);
