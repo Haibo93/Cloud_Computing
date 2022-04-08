@@ -38,7 +38,7 @@ async function insertUser(req: Request, res: Response) {
 
         req.session['user'] = newUser;
 
-        res.status(200).json(returnMessage);
+        res.redirect(200, '/');
 
     } else {
 

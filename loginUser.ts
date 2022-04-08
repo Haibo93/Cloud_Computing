@@ -31,7 +31,9 @@ async function loginUser(req: Request, res: Response) {
 
         };
 
-        res.status(200).json(returnMessage);
+        // Redirect
+        // res.status(200).json(returnMessage);
+        res.redirect(200, '..');
 
     } else {
 
