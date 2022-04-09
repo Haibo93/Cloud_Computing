@@ -8,7 +8,9 @@ logOutBtn.addEventListener('click', logOut);
 async function getLogInStatus() {
     const res = await fetch('/getLogInStatus');
     const result = await res.json();
-    return result.result;
+    console.log(result)
+    console.log(result.userId)
+    return result;
     ;
 };
 
@@ -56,6 +58,40 @@ async function getUserOrder(userId) {
     }
 };
 
+async function getProducts() {
+    const res = await fetch(`/getProducts`)
+    const products = await res.json();
+    const productDetails = products.result
+    const productTable = document.querySelector('#allProducts')
+    console.log(productDetails)
+    productTable.innerHTML += `
+    <table class="table table-striped table-sm">
+    <thead>
+      <tr>
+        <th scope="col">id</th>
+        <th scope="col">Product Name</th>
+        <th scope="col">Product Cost</th>
+        <th scope="col">Product Discription</th>
+      </tr>
+      </thead>
+    `
+    for (let product of productDetails) {
+        productTable.innerHTML += `
+        <tr>
+        <td>${product.id}</td>
+        <td>${product.prod_name}</td>
+        <td>${product.prod_cost}</td>
+        <td>${product.prod_description}</td>
+        </tr>
+        `
+    }
+    productTable.innerHTML += `
+    </tbody>
+    </table>
+    `
+    console.log(productTable)
+};
+
 async function logOut() {
     const res = await fetch('/logOutUser');
     const result = await res.json();
@@ -64,7 +100,11 @@ async function logOut() {
 };
 
 window.onload = async function () {
-    const userId = await getLogInStatus();
-    getUserDetail(userId);
-    getUserOrder(userId);
+    const result = await getLogInStatus();
+    getUserDetail(result.userId);
+    if (result.adminresult == true){
+        getProducts()
+    } else {
+        getUserOrder(result.userId);
+    }
 };

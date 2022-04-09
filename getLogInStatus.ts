@@ -12,9 +12,11 @@ async function getLogInStatus(req: Request, res: Response) {
     };
     try {
         const userId = req.session['user']['id'];
+        const adminStatus = req.session['user']['is_admin'];
         returnMessage.message = "User found.";
         res.status(200).json({
-            result: userId,
+            userId: userId,
+            adminresult: adminStatus,
             message: returnMessage
         });
 
