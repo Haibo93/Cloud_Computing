@@ -32,7 +32,7 @@ app.get('/', function (req: Request, res: Response) {
 });
 
 import { registerUserRoute } from './registerUser';
-import { logInUserRoute } from './logInUser';
+import { loginUserRoute } from './loginUser';
 import { logOutUserRoute } from './logOutUser';
 import { getProductsRoute } from './getProducts';
 import { adminAddProductRoute } from './adminAddProduct';
@@ -46,7 +46,7 @@ import { getLogInStatusRoute } from './getLogInStatus';
 import { userGetDetailsRoute } from './userGetDetails';
 
 app.use(registerUserRoute);
-app.use(logInUserRoute);
+app.use(loginUserRoute);
 app.use(logOutUserRoute)
 app.use(getProductsRoute);
 app.use(getLogInStatusRoute);
