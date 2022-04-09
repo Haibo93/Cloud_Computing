@@ -1,1 +1,1 @@
-web: ts-node start
+web: ts-node/main.ts
