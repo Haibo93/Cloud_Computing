@@ -14,6 +14,6 @@
         "strictNullChecks": true,
         "suppressImplicitAnyIndexErrors": true,
         "noUnusedLocals": true,
-        "types": ["node"]
+        "types": ["express"]
     }
 }
