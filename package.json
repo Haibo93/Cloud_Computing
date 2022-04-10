@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "hash": "node hash.ts",
     "start": "ts-node src/main.ts",
