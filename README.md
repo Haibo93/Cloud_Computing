@@ -17,8 +17,12 @@ FPF Solution provides a demonstration of dynamically generated REST API which ha
 
 
 ## Tech Stack:
+We are choosing popular and mainstream libraries and frameworks to develop our web application. Particularly, Express.js is renowned for its simplicity, realiablity and lightweightness. When it pairs with TypeScript, it further improves the maintainability of the system as it grows more complex in the future. Front-end side is kept as minimal with vanilla Javascript and basic HTML/CSS. AWS comes in play when we deploy the application to the virtual machine EC2 instance on cloud.
+
+
 ### Backend
-Note: The project is still in development and not all features and services are implemented on the front-end side. To test the functionalities, we recommend using [insomnia](https://insomnia.rest/).
+Note: The project is still in development and not all features and services are implemented on the front-end side. To test the functionalities, we recommend using [insomnia](https://insomnia.rest/)
+
 ### CRUD Operations
 Basic CRUD operations are possible by accessing the API routes via adding ``api/registerUser`` and ``api/getProducts`` at the end of the web address following the REST standard. A full list of CRUD is presented below:
 
@@ -60,5 +64,6 @@ On login for users it shows the orders the user has made, and for the admins it 
 ### Cloud App
 
 [![Run on Amazon Web Service](https://a0.awsstatic.com/libra-css/images/logos/aws_smile-header-desktop-en-white_59x35@2x.png)](https://18.170.185.161)
+
 IP: https://18.170.185.161
 Link: https://haiboli.online/
