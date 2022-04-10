@@ -62,7 +62,7 @@ It has been written using the front end framework Bootstrap and was built to be 
 On login for users it shows the orders the user has made, and for the admins it shows details of all products currently available.
 
 
-The project adopted an external Rest api from Open Weather Map
+The app interacts with an external Rest api from [openweatherap.org](https://openweathermap.org/)
 
 ``fetch('https://api.openweathermap.org/data/2.5/weather?lat=51.5072&lon=0.1276&appid=c0caf55ac81d56aa0ed5275c2988f7f3&units=metric')``
 
