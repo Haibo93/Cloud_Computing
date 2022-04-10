@@ -4,6 +4,11 @@
 This is a generic web application demonstrating the use of REST API and cloud-based deployment. The app serves as a product demo of e-commerce website with membership management. 
 
 ### Table of Contents:
+- [About](#about)
+- [Tech Stack](#Tech-Stack)
+- [Backend](#backend)
+  - [CRUD Operations](#crud-operations)
+- [Frontend](#Frontend)
 
 ### About: 	
 FPF Solution provides a demonstration of dynamically generated REST API which has a series of Create, Read, Update and Delete (CRUD) services. All the responses conform to REST standards such as the status codes. FPF Solution also makes use of an external REST service and a cloud database to complement the application's functionality and accessing of persistent information. The security of this app is enforced with simple user account and access management with hash-based authentication is also included in this demo. To enforce further security, our app is served over Hypertext Transfer Protocol Secure (HTTPS). 
