@@ -23,7 +23,7 @@ async function getLogInStatus(req: Request, res: Response) {
     } catch (e) {
         returnMessage.success = false;
         returnMessage.message = "User cannot be found.";
-        res.status(400).json(returnMessage);
+        res.status(404).json(returnMessage);
         console.log(e)
     };
 };

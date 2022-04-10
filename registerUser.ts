@@ -40,15 +40,15 @@ async function insertUser(req: Request, res: Response) {
 
         req.session['user'] = newUser;
 
-        res.status(200).json(returnMessage);
+        res.status(201).json(returnMessage);
 
     } else {
 
         returnMessage.success = false;
 
-        returnMessage.message = "Already existed!";
+        returnMessage.message = "Unable to Register, please try again later";
 
-        res.status(400).json(returnMessage);
+        res.status(404).json(returnMessage);
 
     };
 };

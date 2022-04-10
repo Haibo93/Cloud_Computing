@@ -30,9 +30,9 @@ async function adminDeleteProduct(req: Request, res: Response) {
 
         returnMessage.success = false;
 
-        returnMessage.message = `Production ${id} does not exist.`
+        returnMessage.message = `Production ${id} not found.`
 
-        res.status(400).json(returnMessage);
+        res.status(404).json(returnMessage);
 
     };
 };

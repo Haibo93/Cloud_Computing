@@ -17,7 +17,7 @@ async function logOutUser(req: Request, res: Response) {
 
     };
 
-    res.json(returnMessage);
+    res.status(200).json(returnMessage);
 };
 
 logOutUserRoute.get('/logOutUser', isUserLoggedIn, async function (req: Request, res: Response) {
