@@ -6,6 +6,9 @@
   "scripts": {
     "hash": "node dist/hash.js",
     "start": "node dist/main.js",
+    "postinstall": "tsc",
+    "watch-node": "nodemon dist/main.js",
+    "watch-ts": "tsc -w",
     "dev": "ts-node-dev main.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -29,5 +32,8 @@
   "devDependencies": {
     "@types/node": "^17.0.23",
     "ts-node": "^10.7.0"
+  },
+  "engines": {
+    "node":"16.14.1"
   }
 }
