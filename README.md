@@ -33,9 +33,8 @@ Description: it creates a new user record including the name, email, the passwor
 Log In User:  ``<POST /logInUser>`` 
 
 Description: verifies user trying to log in by checking if the email and password has provided exist in the database. It also verifies the user’s identity i.e. member or admin
-
-
-
+/
+/
 
 Log Out User:  ``<GET /logOutUser>`` 
 
