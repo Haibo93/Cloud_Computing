@@ -15,7 +15,7 @@ This is a generic web application demonstrating the use of REST API and cloud-ba
 ### About: 	
 FPF Solution provides a demonstration of dynamically generated REST API which has a series of Create, Read, Update and Delete (CRUD) services. All the responses conform to REST standards such as the status codes. FPF Solution also makes use of an external REST service and a cloud database to complement the application's functionality and accessing of persistent information. The security of this app is enforced with simple user account and access management with hash-based authentication is also included in this demo. To enforce further security, our app is served over Hypertext Transfer Protocol Secure (HTTPS). 
 
-Note: The project is still in development and not all features and services are implemented on the front-end side. To test the functionalities, we recommend using [insomnia](insomnia.rest).
+Note: The project is still in development and not all features and services are implemented on the front-end side. To test the functionalities, we recommend using [insomnia](https://insomnia.rest/).
 
 ## Tech Stack:
 ### Backend
