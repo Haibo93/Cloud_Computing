@@ -9,6 +9,7 @@ This is a generic web application demonstrating the use of REST API and cloud-ba
 - [Backend](#backend)
   - [CRUD Operations](#crud-operations)
 - [Front-end](#Front-end)
+- [Disclaimer](#Disclaimer)
 
 ### About: 	
 FPF Solution provides a demonstration of dynamically generated REST API which has a series of Create, Read, Update and Delete (CRUD) services. All the responses conform to REST standards such as the status codes. FPF Solution also makes use of an external REST service and a cloud database to complement the application's functionality and accessing of persistent information. The security of this app is enforced with simple user account and access management with hash-based authentication is also included in this demo. To enforce further security, our app is served over Hypertext Transfer Protocol Secure (HTTPS). 
@@ -52,3 +53,8 @@ Update user profile: <Put /user/:id/updateProfile> Description: Update the user 
 The current front end can be seen on the deployment server or when run locally. 
 It has been written using the front end framework Bootstrap and was built to be dynamic.
 On login for users it shows the orders the user has made, and for the admins it shows details of all products currently available.
+
+
+<!-- ### Disclaimer -->
+###### Disclaimer
+This project is part of a cloud computing coursework taught by [Dr. Sukhpal Singh Gill](https://github.com/iamssgill) at the Queen Mary University of London Electrical Engineering & Computer Science Department to create a prototype of a cloud application.
