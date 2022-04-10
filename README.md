@@ -24,7 +24,9 @@ It is advised to use [Postman](https://www.postman.com/) for testing the CRUD op
 Basic CRUD operations are possible by accessing the API routes via adding ``api/registerUser`` and ``api/getProducts`` at the end of the web address following the REST standard. A full list of CRUD is presented below:
 
 Register User:  ``<POST /registerUser>``
+
 Description: it creates a new user record including the name, email, the password hash, company name in the SQL database 
+
 
 Log In User:  ``<POST /logInUser>`` Description: verifies user trying to log in by checking if the email and password has provided exist in the database. It also verifies the user’s identity i.e. member or admin
 
