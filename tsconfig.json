@@ -4,6 +4,8 @@
         "target": "es5",
         "lib": ["es6", "dom"],
         "sourceMap": true,
+        "rootDir": "./",
+        "outDir": "./dist",
         // "allowJs": true,
         "jsx": "react",
         "esModuleInterop":true,
@@ -14,5 +16,7 @@
         "strictNullChecks": true,
         "suppressImplicitAnyIndexErrors": true,
         "noUnusedLocals": true
-    }
+    }, "exclude": [
+        "./node_modules"
+    ]
 }

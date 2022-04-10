@@ -1,1 +1,1 @@
-web: ts-node main.ts
+web: node dist/index.js
