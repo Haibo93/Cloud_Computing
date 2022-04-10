@@ -43,8 +43,8 @@ document.getElementById('login-user').addEventListener('submit', async function(
     const formObject = {};
     formObject['email'] = form.email.value;
     formObject['password'] = form.password.value;
-    console.log('formObject');
-    const res = await fetch('/logInUser', {
+    console.log(formObject);
+    const res = await fetch('/loginUser', {
         method:"POST",
         headers:{
             "Content-Type":"application/json"
@@ -54,6 +54,6 @@ document.getElementById('login-user').addEventListener('submit', async function(
     if (res.status == 200) {
       window.location = '/userpage.html';
     };
-    
+    console.log('passed res')
 });
 

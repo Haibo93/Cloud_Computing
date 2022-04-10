@@ -11,8 +11,6 @@ async function userAddOrder(req: Request, res: Response) {
 
     let id: number = parseInt(req.params.id);
 
-    await client.query(/*sql*/`INSERT INTO Order_ (user_id, product_id, order_date) VALUES ($1, $2, NOW())`, [id, req.body.product_id]);
-
     let returnMessage: Message = {
 
         success: true,
@@ -21,7 +19,19 @@ async function userAddOrder(req: Request, res: Response) {
 
     };
 
-    res.status(200).json(returnMessage);
+    try {
+        await client.query(/*sql*/`INSERT INTO Order_ (user_id, product_id, order_date) VALUES ($1, $2, NOW())`, [id, req.body.product_id]);
+        
+        res.status(201).json(returnMessage);
+
+    } catch (e) {
+
+        returnMessage.success = false;
+
+        returnMessage.message = "Order not placed!"
+
+        res.status(400).json(returnMessage);
+    }
 
 };
 

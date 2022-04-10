@@ -21,7 +21,7 @@ async function adminAddProduct(req: Request, res: Response) {
 
     };
 
-    res.status(200).json(returnMessage);
+    res.status(201).json(returnMessage);
 };
 
 adminAddProductRoute.post('/admin/addProduct', isAdminLoggedIn, async function (req: Request, res: Response) {

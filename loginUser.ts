@@ -39,11 +39,13 @@ async function loginUser(req: Request, res: Response) {
 
         returnMessage = new LoginMessage(false, "Incorrect email or password", false);
         
+        res.status(404).json(returnMessage);
+
     };
 };
 
 loginUserRoute.post('/loginUser', async function (req: Request, res: Response) {
-
+    
     await loginUser(req, res);
 
 });
