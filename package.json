@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "hash": "ts-node hash.ts",
-    "start": "ts-node main.ts",
+    "hash": "node hash.ts",
+    "start": "node main.ts",
     "dev": "ts-node-dev main.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

@@ -3,13 +3,10 @@ import { Request, Response } from 'express';
 import expressSession from 'express-session';
 import path from 'path';
 import { Client } from 'pg';
-import dotenv from 'dotenv';
 
 const app = express();
 
 // connecting the database to the server
-dotenv.config();
-
 export const client = new Client({
     database: process.env.DATABASE_URL
     // user: process.env.DB_USERNAME,
