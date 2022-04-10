@@ -9,6 +9,7 @@ This is a generic web application demonstrating the use of REST API and cloud-ba
 - [Backend](#backend)
   - [CRUD Operations](#crud-operations)
 - [Front-end](#Front-end)
+- [Cloud App](#Cloud-app)
 - [Disclaimer](#Disclaimer)
 
 ### About: 	
@@ -53,6 +54,8 @@ Update user profile: <Put /user/:id/updateProfile> Description: Update the user 
 The current front end can be seen on the deployment server or when run locally. 
 It has been written using the front end framework Bootstrap and was built to be dynamic.
 On login for users it shows the orders the user has made, and for the admins it shows details of all products currently available.
+
+### Cloud App
 
 
 <!-- ### Disclaimer -->
