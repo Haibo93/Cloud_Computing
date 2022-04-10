@@ -57,9 +57,7 @@ On login for users it shows the orders the user has made, and for the admins it 
 
 ### Cloud App
 #### Heroku
-[![Run](https://www.herokucdn.com/deploy/button.svg)]()
-
-This deployment is currently not load balanced yet but supports an HTTPS certificate. 
+[![Run](https://www.herokucdn.com/deploy/button.svg)]() 
 
 <!-- ### Disclaimer -->
 ###### Disclaimer
