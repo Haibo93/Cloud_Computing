@@ -1,8 +1,8 @@
-const express = require( "express" )
-const { Request, Response } =require('express');
-const expressSession = require('express-session');
-const path =require('path');
-const { Client } = require('pg');
+import express from "express";
+import { Request, Response } from 'express';
+import expressSession from 'express-session';
+import path from 'path';
+import { Client } from 'pg';
 
 const app = express();
 
