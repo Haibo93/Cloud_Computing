@@ -1,19 +1,37 @@
 # Cloud-Computing
 ## Marks:
-The application provides a dynamically generated REST API. The API must have a sufficient set of services for the selected application domain. The REST API responses must conform to REST standards (e.g. response codes).  3 Points
 
-The application makes use of an external REST service to complement its functionality. 3 Points
+### FPF Solution:
+This is a generic web application demonstrating the use of REST API and cloud-based deployment. It could be served as a product demo of e-commerce website with membership management.
 
-The application uses a cloud database for accessing persistent information. 3 Points
+### Table of Contents:
+- [About](#about)
+- [Tech Stack](#system-architecture)
+- [Backend](#backend)
+  - [CRUD Operations](#crud-operations)
+- [AWS](#cloud-app)
+- [Frontend](#aws)
+  - [Running Locally](#running-locally)
+    - [Local Node.js Installation](#local-node-installation)
+    - [NPM](#npm)
+ - [Front-end](#front-end)
 
-The application code is well documented (in each of the code files, as well as in the README.MD file of the git repository). 1 Point
+### About: 
+FPF Solution is providing a demostration of dynamically generated REST API which has a set of Create, Read, Update and Delete (CRUD) services. The responses also conform to REST standards such as the status codes. Apart from that, it will also make use of an external REST service and a cloud database to complement the application's functionality and accessing persistent information. Simple user account and access management with hash-based authentication is also included in this demo. To enforce further security of our applicaton, it would be served over https. 
 
-Option 1: 5 points for demonstration of load balancing/scaling of the application (e.g. Kubernetes based load balancing/GKE). In order to get the full 5 marks, the student must demonstrate (in the video presentation) the effect in practice of these techniques.
+__Note:__ The project is still in development and not all features and services are implemented on the front-end side. To test the functinoalities, we recommend using [insomnia](insomnia.rest).
 
-Option 2: Up to 5 for any 3 implementations as mentioned below:
-Serving the application over https.
-Implementing hash-based authentication.
-Implementing user accounts and access management.
-Securing the database with role-based policies.
+### Tech Stack:
+- Backend 
+Express.js
+TypeScript
+Postgresql
 
-Option 3: Up to 5 points: Anything else that would be relevant to a cloud application (needs to be pre-approved by Sukhpal - contact through email first).
+- Frontend
+HTML/CSS
+Javascript
+Bootstrap
+
+- Cloud
+Amazon Web Service
+
