@@ -35,7 +35,8 @@ Admin add product:  <POST /admin/adminAddProduct> Description: allows the admin 
 
 Admin delete product:  <Delete /admin/deleteProduct/:id> Description: allows the admin to delete a product according to the id provided
 
-Admin update product:  <Put /admin/updateProduct/:id> Description: allows the admin to update the information of a specific product
+Admin update product:  <Put /admin/updateProduct/:id> 
+Description: allows the admin to update the information of a specific product
 
 User adds order:  <Post /user/:id/addOrder> Description: allows the user to create a new order
 
