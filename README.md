@@ -28,9 +28,21 @@ Register User:  ``<POST /registerUser>``
 Description: it creates a new user record including the name, email, the password hash, company name in the SQL database 
 
 
-Log In User:  ``<POST /logInUser>`` Description: verifies user trying to log in by checking if the email and password has provided exist in the database. It also verifies the user’s identity i.e. member or admin
 
-Log Out User:  ``<GET /logOutUser>`` Description: log out a user given the person is logged in 
+
+Log In User:  ``<POST /logInUser>`` 
+
+Description: verifies user trying to log in by checking if the email and password has provided exist in the database. It also verifies the user’s identity i.e. member or admin
+
+
+
+
+Log Out User:  ``<GET /logOutUser>`` 
+
+Description: log out a user given the person is logged in 
+
+
+
 
 Get Product:  ``<GET /getProducts>`` Description: gets the product information from the database
 
