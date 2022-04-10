@@ -47,8 +47,7 @@ User gets orders:  <Get /user/:id/getUserOrder> Description: gets the detail of 
 
 Get login status:  <Get /getLogInStatus> Description: Get the status or a user or return an error message if the user in not in the database 
 
-Update user profile: <Put /user/:id/updateProfile> 
-Description: Update the user profile in the database
+Update user profile: <Put /user/:id/updateProfile> Description: Update the user profile in the database
 
 
 ### Front-end
