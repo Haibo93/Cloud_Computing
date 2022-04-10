@@ -35,3 +35,5 @@ INSERT INTO Product (prod_name, prod_cost, prod_description) VALUES ('Bronze', 1
 INSERT INTO Product (prod_name, prod_cost, prod_description) VALUES ('Silver', 200, 'Show us your web design and we will create it for you! The website will have a limited page of 10 and then be hosted on the cloud platforms.');
 INSERT INTO Product (prod_name, prod_cost, prod_description) VALUES ('Gold', 500, 'Just tell us your idea. We will do the rest! It includes UX UI design, database implementation, the web and the host.');
 INSERT INTO Product (prod_name, prod_cost, prod_description) VALUES ('Platinum', 1200, 'If you are ambitious about your online platform, this is the one! The best of Gold Package with more features, such as machine learning and artificial intellegience. It also comes with lifetime 24hr maintainence!');
+INSERT INTO Order_ (user_id, product_id, order_date) VALUES (1, 3, TIMESTAMP '2022-03-19 10:23:54+02');
+INSERT INTO Order_ (user_id, product_id, order_date) VALUES (1, 4, TIMESTAMP '2022-03-20 07:54:42+02');
