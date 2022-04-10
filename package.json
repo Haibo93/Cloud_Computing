@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "hash": "node hash.ts",
-    "start": "node main.ts",
+    "start": "ts-node src/main.ts",
     "dev": "ts-node-dev main.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
