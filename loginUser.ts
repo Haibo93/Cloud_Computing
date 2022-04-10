@@ -4,9 +4,9 @@ import { checkHash } from './hash';
 import { client } from './main';
 import { LoginMessage, User } from './interfaces'
 
-export const logInUserRoute = express.Router();
+export const loginUserRoute = express.Router();
 
-async function logInUser(req: Request, res: Response) {
+async function loginUser(req: Request, res: Response) {
 
     const users: User[] = (await client.query(/*sql*/`SELECT * FROM User_ where email = $1`
         , [req.body.email])).rows;
@@ -42,9 +42,9 @@ async function logInUser(req: Request, res: Response) {
     };
 };
 
-logInUserRoute.post('/logInUser', async function (req: Request, res: Response) {
+loginUserRoute.post('/loginUser', async function (req: Request, res: Response) {
 
-    await logInUser(req, res);
+    await loginUser(req, res);
 
 });
 

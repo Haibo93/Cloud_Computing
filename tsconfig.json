@@ -4,7 +4,7 @@
         "target": "es5",
         "lib": ["es6", "dom"],
         "sourceMap": true,
-        "allowJs": true,
+        // "allowJs": true,
         "jsx": "react",
         "esModuleInterop":true,
         "moduleResolution": "node",
@@ -14,11 +14,5 @@
         "strictNullChecks": true,
         "suppressImplicitAnyIndexErrors": true,
         "noUnusedLocals": true
-    },
-    "exclude": [
-        "node_modules",
-        "build",
-        "scripts",
-        "index.js"
-    ]
+    }
 }

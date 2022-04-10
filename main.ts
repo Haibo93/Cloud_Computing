@@ -3,17 +3,14 @@ import { Request, Response } from 'express';
 import expressSession from 'express-session';
 import path from 'path';
 import { Client } from 'pg';
-import dotenv from 'dotenv';
 
 const app = express();
 
 // connecting the database to the server
-dotenv.config();
-
 export const client = new Client({
-    database: process.env.DB_NAME,
-    user: process.env.DB_USERNAME,
-    password: process.env.DB_PASSWORD
+    database: process.env.DATABASE_URL
+    // user: process.env.DB_USERNAME,
+    // password: process.env.DB_PASSWORD
 });
 client.connect();
 
@@ -32,7 +29,7 @@ app.get('/', function (req: Request, res: Response) {
 });
 
 import { registerUserRoute } from './registerUser';
-import { logInUserRoute } from './logInUser';
+import { loginUserRoute } from './loginUser';
 import { logOutUserRoute } from './logOutUser';
 import { getProductsRoute } from './getProducts';
 import { adminAddProductRoute } from './adminAddProduct';
@@ -46,7 +43,7 @@ import { getLogInStatusRoute } from './getLogInStatus';
 import { userGetDetailsRoute } from './userGetDetails';
 
 app.use(registerUserRoute);
-app.use(logInUserRoute);
+app.use(loginUserRoute);
 app.use(logOutUserRoute)
 app.use(getProductsRoute);
 app.use(getLogInStatusRoute);
