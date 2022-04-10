@@ -58,8 +58,4 @@ app.use(adminUpdateProductRoute);
 
 app.use(express.static('public'));
 
-const PORT = 8080;
-
-app.listen(PORT, () => {
-    console.log(`Listening at http://localhost:${PORT}`)
-});
+app.listen(() => {});
