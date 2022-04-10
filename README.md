@@ -26,30 +26,30 @@ Basic CRUD operations are possible by accessing the API routes via adding ``api/
 Register User:  ``<POST /registerUser>``
 Description: it creates a new user record including the name, email, the password hash, company name in the SQL database 
 
-Log In User:  <POST /logInUser> Description: verifies user trying to log in by checking if the email and password has provided exist in the database. It also verifies the user’s identity i.e. member or admin
+Log In User:  ``<POST /logInUser>`` Description: verifies user trying to log in by checking if the email and password has provided exist in the database. It also verifies the user’s identity i.e. member or admin
 
-Log Out User:  <GET /logOutUser> Description: log out a user given the person is logged in 
+Log Out User:  ``<GET /logOutUser>`` Description: log out a user given the person is logged in 
 
-Get Product:  <GET /getProducts> Description: gets the product information from the database
+Get Product:  ``<GET /getProducts>`` Description: gets the product information from the database
 
-Admin add product:  <POST /admin/adminAddProduct> Description: allows the admin to create a product by entering the product name, product cost, product description
+Admin add product:  ``<POST /admin/adminAddProduct>`` Description: allows the admin to create a product by entering the product name, product cost, product description
 
-Admin delete product:  <Delete /admin/deleteProduct/:id> Description: allows the admin to delete a product according to the id provided
+Admin delete product:  ``<Delete /admin/deleteProduct/:id>`` Description: allows the admin to delete a product according to the id provided
 
-Admin update product:  <Put /admin/updateProduct/:id> 
+Admin update product:  ``<Put /admin/updateProduct/:id>`` 
 Description: allows the admin to update the information of a specific product
 
-User adds order:  <Post /user/:id/addOrder> Description: allows the user to create a new order
+User adds order:  ``<Post /user/:id/addOrder>`` Description: allows the user to create a new order
 
-User deletes order:  <Delete /user/ :user_id/deleteOrder/:order_id> Description: allows the user to delete an existing order in the database
+User deletes order:  ``<Delete /user/ :user_id/deleteOrder/:order_id>`` Description: allows the user to delete an existing order in the database
 
-User gets Details:  <Get /user/:id> Description: Gets a user’s detail or return an error message if the user is not found
+User gets Details:  ``<Get /user/:id>`` Description: Gets a user’s detail or return an error message if the user is not found
 
-User gets orders:  <Get /user/:id/getUserOrder> Description: gets the detail of the orders of an user in the database
+User gets orders:  ``<Get /user/:id/getUserOrder>`` Description: gets the detail of the orders of an user in the database
 
-Get login status:  <Get /getLogInStatus> Description: Get the status or a user or return an error message if the user in not in the database 
+Get login status:  ``<Get /getLogInStatus>`` Description: Get the status or a user or return an error message if the user in not in the database 
 
-Update user profile: <Put /user/:id/updateProfile> Description: Update the user profile in the database
+Update user profile: ``<Put /user/:id/updateProfile>`` Description: Update the user profile in the database
 
 
 ### Front-end
