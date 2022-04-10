@@ -2,15 +2,18 @@ import express from 'express';
 import { Request, Response } from 'express';
 import expressSession from 'express-session';
 import path from 'path';
+import dotenv from 'dotenv';
 import { Client } from 'pg';
+
+dotenv.config();
 
 const app = express();
 
 // connecting the database to the server
 export const client = new Client({
-    database: process.env.DATABASE_URL
-    // user: process.env.DB_USERNAME,
-    // password: process.env.DB_PASSWORD
+    database: process.env.DB_NAME,
+    user: process.env.DB_USERNAME,
+    password: process.env.DB_PASSWORD
 });
 client.connect();
 
