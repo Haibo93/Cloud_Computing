@@ -4,11 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "hash": "node dist/hash.js",
-    "start": "node dist/main.js",
-    "postinstall": "tsc",
-    "watch-node": "nodemon dist/main.js",
-    "watch-ts": "tsc -w",
+    "hash": "ts-node hash.ts",
+    "start": "ts-node main.ts",
     "dev": "ts-node-dev main.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -26,14 +23,8 @@
     "express-session": "^1.17.2",
     "multer": "^1.4.4",
     "pg": "^8.7.3",
+    "ts-node": "^10.7.0",
     "ts-node-dev": "^1.1.8",
     "typescript": "^4.6.3"
-  },
-  "devDependencies": {
-    "@types/node": "^17.0.23",
-    "ts-node": "^10.7.0"
-  },
-  "engines": {
-    "node":"16.14.1"
   }
 }
