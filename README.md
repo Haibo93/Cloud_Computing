@@ -61,6 +61,11 @@ The current front end can be seen on the deployment server or when run locally.
 It has been written using the front end framework Bootstrap and was built to be dynamic.
 On login for users it shows the orders the user has made, and for the admins it shows details of all products currently available.
 
+
+The project adopted an external Rest api from Open Weather Map
+``fetch('https://api.openweathermap.org/data/2.5/weather?lat=51.5072&lon=0.1276&appid=c0caf55ac81d56aa0ed5275c2988f7f3&units=metric')``
+
+
 ### Cloud App
 
 [![Run on Amazon Web Service](https://a0.awsstatic.com/libra-css/images/logos/aws_smile-header-desktop-en-white_59x35@2x.png)](https://18.170.185.161)
